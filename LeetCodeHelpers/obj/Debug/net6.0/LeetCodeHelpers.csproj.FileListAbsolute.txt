@@ -1,0 +1,12 @@
+C:\Users\boulb\source\repos\LeetCodeAndOthers\LeetCodeHelpers\bin\Debug\net6.0\LeetCodeHelpers.deps.json
+C:\Users\boulb\source\repos\LeetCodeAndOthers\LeetCodeHelpers\bin\Debug\net6.0\LeetCodeHelpers.dll
+C:\Users\boulb\source\repos\LeetCodeAndOthers\LeetCodeHelpers\bin\Debug\net6.0\LeetCodeHelpers.pdb
+C:\Users\boulb\source\repos\LeetCodeAndOthers\LeetCodeHelpers\obj\Debug\net6.0\LeetCodeHelpers.csproj.AssemblyReference.cache
+C:\Users\boulb\source\repos\LeetCodeAndOthers\LeetCodeHelpers\obj\Debug\net6.0\LeetCodeHelpers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\boulb\source\repos\LeetCodeAndOthers\LeetCodeHelpers\obj\Debug\net6.0\LeetCodeHelpers.AssemblyInfoInputs.cache
+C:\Users\boulb\source\repos\LeetCodeAndOthers\LeetCodeHelpers\obj\Debug\net6.0\LeetCodeHelpers.AssemblyInfo.cs
+C:\Users\boulb\source\repos\LeetCodeAndOthers\LeetCodeHelpers\obj\Debug\net6.0\LeetCodeHelpers.csproj.CoreCompileInputs.cache
+C:\Users\boulb\source\repos\LeetCodeAndOthers\LeetCodeHelpers\obj\Debug\net6.0\LeetCodeHelpers.dll
+C:\Users\boulb\source\repos\LeetCodeAndOthers\LeetCodeHelpers\obj\Debug\net6.0\refint\LeetCodeHelpers.dll
+C:\Users\boulb\source\repos\LeetCodeAndOthers\LeetCodeHelpers\obj\Debug\net6.0\LeetCodeHelpers.pdb
+C:\Users\boulb\source\repos\LeetCodeAndOthers\LeetCodeHelpers\obj\Debug\net6.0\ref\LeetCodeHelpers.dll

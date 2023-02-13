@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "LeetCodeAndOthers/1.0.0": {
+        "dependencies": {
+          "LeetCodeHelpers": "1.0.0"
+        },
+        "runtime": {
+          "LeetCodeAndOthers.dll": {}
+        }
+      },
+      "LeetCodeHelpers/1.0.0": {
+        "runtime": {
+          "LeetCodeHelpers.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LeetCodeAndOthers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LeetCodeHelpers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
