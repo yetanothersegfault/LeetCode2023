@@ -186,5 +186,20 @@ namespace LeetCodeAndOthers
             return list[half];
         }
 
+        public ListNode DetectCycle(ListNode head)
+        {
+            var dic = new Dictionary<ListNode, int>();
+
+            while(head != null ) 
+            {
+                if (!dic.ContainsKey(head))
+                    dic.Add(head, 1);
+                else
+                    return head;
+            }
+
+            return null;
+        }
+
     }
 }

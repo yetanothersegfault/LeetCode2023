@@ -27,7 +27,9 @@ namespace LeetCodeAndOthers
 
             //var reverse = sol.ReverseList(list1);
 
-            var mid = sol.MiddleNode(list1);
+            //var mid = sol.MiddleNode(list1);
+
+            var cycle = sol.DetectCycle(list1);
         }
     }
 }
