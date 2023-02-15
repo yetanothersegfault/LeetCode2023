@@ -12,6 +12,9 @@ using LeetCodeHelpers;
  * 2) Find Pivot Index (easy)
  * 3) Isomorphic Strings (easy)
  * 4) Is Subsequence (easy)
+ * 5) Merge Two Lists (easy)
+ * 6) Reverse List (easy)
+ * 7) Middle of the Linked List (easy)
  */
 
 namespace LeetCodeAndOthers
@@ -164,6 +167,23 @@ namespace LeetCodeAndOthers
             head.next = null;
 
             list.Add(head);
+        }
+
+        public ListNode MiddleNode(ListNode head)
+        {
+            if (head == null)
+                return head;
+
+            var list = new List<ListNode>();
+            while(head != null) 
+            { 
+                list.Add(head);
+                head = head.next;
+            }
+
+            int half = list.Count / 2;
+
+            return list[half];
         }
 
     }
