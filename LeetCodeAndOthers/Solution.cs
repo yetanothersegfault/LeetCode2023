@@ -133,6 +133,38 @@ namespace LeetCodeAndOthers
             list2 = list2.next;
         }
 
+        public ListNode ReverseList(ListNode head) 
+        {
+            // case in which list is empty
+            if (head == null)
+                return head;
+
+            // go through the linked list and get the nodes in reverse order
+            var list = new List<ListNode>();
+            Traverse(head, ref list);
+
+            // point to new head
+            head = list.First();
+
+            for(int i =0; i < list.Count - 1; i++)
+            {
+                list[i].next = list[i + 1];
+            }
+
+            return head;
+        }
+
+        public void Traverse(ListNode head, ref List<ListNode> list)
+        {
+            // keep going till we find the end
+            if(head.next != null)
+                Traverse(head.next, ref list);
+
+            // remove the next as we will be replacing them
+            head.next = null;
+
+            list.Add(head);
+        }
 
     }
 }
