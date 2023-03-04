@@ -21,9 +21,15 @@ namespace LeetCodeAndOthers
 
             //var isSub = sol.IsSubsequence("axc", "ahbgdc");
 
-            var list1 = ListNode.Create(new int[] { 1, 2, 4 });
-            var list2 = ListNode.Create(new int[] { 1, 3, 4});
-            var merge = sol.MergeTwoLists(list1, list2);
+            var list1 = ListNode.Create(new int[] { 1, 2, 3, 4, 5, 6 });
+            //var list2 = ListNode.Create(new int[] { 1, 3, 4});
+            //var merge = sol.MergeTwoLists(list1, list2);
+
+            //var reverse = sol.ReverseList(list1);
+
+            //var mid = sol.MiddleNode(list1);
+
+            var cycle = sol.DetectCycle(list1);
         }
     }
 }

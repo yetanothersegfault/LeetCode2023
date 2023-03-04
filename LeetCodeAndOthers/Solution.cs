@@ -12,6 +12,9 @@ using LeetCodeHelpers;
  * 2) Find Pivot Index (easy)
  * 3) Isomorphic Strings (easy)
  * 4) Is Subsequence (easy)
+ * 5) Merge Two Lists (easy)
+ * 6) Reverse List (easy)
+ * 7) Middle of the Linked List (easy)
  */
 
 namespace LeetCodeAndOthers
@@ -133,16 +136,69 @@ namespace LeetCodeAndOthers
             list2 = list2.next;
         }
 
-        public ListNode ReverseList(ListNode head)
+        public ListNode ReverseList(ListNode head) 
         {
-            var ret = new ListNode(head.val);
-            if(head.next != null)
+            // case in which list is empty
+            if (head == null)
+                return head;
+
+            // go through the linked list and get the nodes in reverse order
+            var list = new List<ListNode>();
+            Traverse(head, ref list);
+
+            // point to new head
+            head = list.First();
+
+            for(int i =0; i < list.Count - 1; i++)
             {
-                var node = ReverseList(head.next);
-                node.next = ret;
+                list[i].next = list[i + 1];
             }
 
-            return ret;
+            return head;
+        }
+
+        public void Traverse(ListNode head, ref List<ListNode> list)
+        {
+            // keep going till we find the end
+            if(head.next != null)
+                Traverse(head.next, ref list);
+
+            // remove the next as we will be replacing them
+            head.next = null;
+
+            list.Add(head);
+        }
+
+        public ListNode MiddleNode(ListNode head)
+        {
+            if (head == null)
+                return head;
+
+            var list = new List<ListNode>();
+            while(head != null) 
+            { 
+                list.Add(head);
+                head = head.next;
+            }
+
+            int half = list.Count / 2;
+
+            return list[half];
+        }
+
+        public ListNode DetectCycle(ListNode head)
+        {
+            var dic = new Dictionary<ListNode, int>();
+
+            while(head != null ) 
+            {
+                if (!dic.ContainsKey(head))
+                    dic.Add(head, 1);
+                else
+                    return head;
+            }
+
+            return null;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -50,6 +51,24 @@ namespace LeetCodeHelpers
             var next = ret;
 
             for(int i =1; i < array.Length; i++)
+            {
+                var node = new ListNode(array[i]);
+                next.next = node;
+                next = next.next;
+            }
+
+            return ret;
+        }
+
+        public static ListNode CreateWithCycle(int[] array)
+        {
+            if (array.Length == 0)
+                return null;
+
+            var ret = new ListNode(array[0]);
+            var next = ret;
+
+            for (int i = 1; i < array.Length; i++)
             {
                 var node = new ListNode(array[i]);
                 next.next = node;
