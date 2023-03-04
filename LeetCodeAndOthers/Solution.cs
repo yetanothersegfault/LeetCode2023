@@ -133,6 +133,16 @@ namespace LeetCodeAndOthers
             list2 = list2.next;
         }
 
+        public ListNode ReverseList(ListNode head)
+        {
+            var ret = new ListNode(head.val);
+            if(head.next != null)
+            {
+                var node = ReverseList(head.next);
+                node.next = ret;
+            }
 
+            return ret;
+        }
     }
 }
