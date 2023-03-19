@@ -15,6 +15,7 @@ using LeetCodeHelpers;
  * 5) Merge Two Lists (easy)
  * 6) Reverse List (easy)
  * 7) Middle of the Linked List (easy)
+ * 8) Numbers With Same Consecutive Differences (medium)
  */
 
 namespace LeetCodeAndOthers
@@ -199,6 +200,100 @@ namespace LeetCodeAndOthers
             }
 
             return null;
+        }
+
+        public int[] NumsSameConsecDiff(int n, int k)
+        {
+            List<int> list = new List<int>();
+
+            var trees = new List<TreeNode>();
+
+            //make trees
+
+            //start loop at 1 since the values can not start at zero eg 070 (n = 3, k=7) or 0246 (n = 4, k = 2)
+            for(int i = 1; i < 10; i++)
+            {
+                int level = 0;
+
+                var tree = new TreeNode(i);
+                trees.Add(tree);
+
+                var queue = new Queue<TreeNode>();
+                queue.Enqueue(tree);
+
+                var NextLevel = new Queue<TreeNode>();
+
+                while(queue.Count > 0 && level < n - 1)
+                {
+                    var node = queue.Dequeue();
+
+                    if(node.val - k >= 0)
+                    {
+                        var lNode = new TreeNode(node.val - k);
+                        node.Left = lNode;
+                        NextLevel.Enqueue(lNode);
+                    }
+
+                    if (node.val + k < 10)
+                    {
+                        var rNode = new TreeNode(node.val + k);
+                        node.Right = rNode;
+                        NextLevel.Enqueue(rNode);
+                    }
+
+                    // when the original queue is empty we will be on the next level down
+                    // Copy the next level down to the queue to keep going if there is another level to explore
+                    if (queue.Count == 0)
+                    {
+                        level++;
+
+                        if(level != n)
+                        {
+                            queue = new Queue<TreeNode>(NextLevel);
+                            NextLevel.Clear();
+                        }
+                    }
+                }
+            }
+
+            //traverse trees for values
+
+            foreach(var t in trees)
+            {
+                //skip over tree if both left and right are null since this contains no values
+                if (t.Left == null && t.Right == null) continue;
+
+                var sb = new StringBuilder();
+                sb.Append(t.val.ToString());
+
+                if(t.Left != null)
+                    CreateString(t.Left, sb.ToString(), ref list);
+
+                if(t.Right != null)
+                    CreateString(t.Right, sb.ToString(), ref list);
+            }
+
+            return list.ToHashSet().ToArray();
+        }
+
+        public static void CreateString(TreeNode t, string val, ref List<int> list)
+        {
+            var sb = new StringBuilder(val);
+
+            // check to see if at the end of the line
+            if (t.Left == null && t.Right == null)
+            {
+                list.Add(int.Parse(sb.Append(t.val).ToString()));
+                return;
+            }
+
+            sb.Append(t.val.ToString());
+
+            if(t.Left != null)
+                CreateString(t.Left, sb.ToString(), ref list);
+
+            if (t.Right != null)
+                CreateString(t.Right, sb.ToString(), ref list);
         }
     }
 }

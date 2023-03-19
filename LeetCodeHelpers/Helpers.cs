@@ -79,5 +79,18 @@ namespace LeetCodeHelpers
         }
     }
 
+    public class TreeNode
+    {
+        public int val;
+        public TreeNode? Left;
+        public TreeNode? Right;
+
+        public TreeNode(int val = 0, TreeNode? left = null, TreeNode? right = null)
+        {
+            this.val = val;
+            Left = left;
+            Right = right;  
+        }
+    }
 
 }

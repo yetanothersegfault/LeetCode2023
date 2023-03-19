@@ -29,7 +29,9 @@ namespace LeetCodeAndOthers
 
             //var mid = sol.MiddleNode(list1);
 
-            var cycle = sol.DetectCycle(list1);
+            //var cycle = sol.DetectCycle(list1);
+
+            var nums = sol.NumsSameConsecDiff(2, 0);
         }
     }
 }
